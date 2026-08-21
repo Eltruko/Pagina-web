@@ -1,0 +1,609 @@
+:root {
+    /* --- COLORES OFICIALES RENOVACIÓN --- */
+    --renovacion-purple: #90268E; /* Pantone 2592 */
+    --renovacion-teal: #00C7B1;   /* Pantone 3265 */
+
+    /* Colores base */
+    --color-primary-dark: #6A1B9A; 
+    --color-primary-light: #8D60C8; 
+    --color-secondary: #00AFA9; 
+    --color-background-light: #F8F8F8; 
+    --color-text-dark: #333;
+    
+    --font-primary: 'Poppins', 'Montserrat', sans-serif;
+    --font-brand: 'Montserrat', 'Poppins', sans-serif; 
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    background-color: white;
+}
+
+/* Importar Montserrat para el efecto Gotham Black */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-primary-dark { color: var(--color-primary-dark); }
+.text-primary-light { color: var(--color-primary-light); }
+
+/* BOTÓN "SÚMATE" */
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 15px 35px; 
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+    
+    /* Espaciado */
+    margin-top: 25px; 
+    margin-bottom: 40px; 
+    
+    position: relative; 
+    z-index: 10;
+}
+.cta-button:hover { background-color: #008f8a; }
+
+
+.header {
+    padding: 15px 5%;
+    background: white;
+}
+
+/* --- LOGO DEL MENÚ --- */
+.logo-main {
+    font-family: var(--font-brand);
+    font-size: 1.8em;
+    font-weight: 900; 
+    color: var(--renovacion-purple);
+    text-transform: uppercase;
+    letter-spacing: -1px; 
+    display: inline-block;
+    
+    /* SHADOW BOX A LA IZQUIERDA */
+    text-shadow: -4px 0 0 var(--renovacion-teal); 
+    
+    margin-right: 5px; 
+}
+
+.logo-sub {
+    display: block;
+    font-size: 0.8em;
+    font-weight: 400;
+    color: var(--renovacion-teal);
+    margin-top: 5px;
+}
+
+
+.hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 60px 5%;
+    min-height: 70vh;
+    position: relative;
+    background-color: var(--color-background-light);
+}
+
+.hero-content {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding-right: 30px;
+}
+
+/* --- TÍTULO GRANDE --- */
+.hero-title {
+    font-family: var(--font-brand);
+    font-size: 6vw; 
+    
+    /* Líneas juntas verticalmente */
+    line-height: 0.9; 
+    
+    margin-bottom: 30px; 
+    
+    font-weight: 900;
+    padding-left: 10px; 
+    padding-bottom: 10px;
+}
+
+.hero-title .text-primary-dark {
+    display: block;
+    font-size: 0.4em;
+    font-weight: 300;
+    color: var(--color-text-dark);
+    margin-bottom: 10px; 
+    text-shadow: none;
+    font-family: var(--font-primary);
+    line-height: 1.2;
+}
+
+/* PALABRAS RE - NOVA - CIÓN */
+.hero-title .display-word {
+    display: block;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--renovacion-purple);
+    
+    /* SHADOW BOX */
+    text-shadow: -7px 0 0 var(--renovacion-teal);
+    
+    /* Letras juntas pero no encimadas (-0.02em es seguro) */
+    letter-spacing: -0.02em; 
+    
+    margin-bottom: 0px; 
+}
+
+.hero-decoration {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px;
+}
+
+
+/* --- RESTO DEL SITIO (Cards, etc) --- */
+.social-card-1 { 
+    background-color: var(--color-primary-dark);
+    height: 350px; 
+    width: 80%;
+    max-width: 500px;
+    border-radius: 20px; 
+    box-shadow: 5px 5px 0 var(--color-primary-light); 
+    position: relative; 
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.social-card-1:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 12px 12px 0 var(--color-primary-light);
+}
+.social-links {
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 5%;
+}
+.social-links a {
+    color: var(--color-secondary);
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+
+.invitation-section {
+    padding: 60px 0;
+    background: white;
+}
+
+.invitation-grid {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.invitation-text-block {
+    flex: 1;
+    max-width: 45%;
+}
+
+.title-bg {
+    background-color: var(--color-primary-dark);
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-size: 1.1em;
+}
+
+.title-bg h2 {
+    font-size: 1em;
+    margin: 0;
+}
+
+
+.social-card-2 {
+    width: 80%;
+    height: 333px;
+    margin-top: 10px;
+    background: var(--color-secondary); 
+    border-radius: 5px;
+    box-shadow: 5px 5px 0 var(--color-primary-light); 
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.social-card-2:hover {
+    transform: translate(-2px, -2px); 
+    box-shadow: 12px 12px 0 var(--color-primary-light);
+}
+
+.social-media-link-wrapper {
+    display: block; 
+    width: 100%;
+    height: 100%;
+}
+
+.social-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+.social-media-link-wrapper:hover .social-card-image {
+    transform: scale(1.05); 
+}
+
+
+.video-block {
+    flex: 1;
+    max-width: 55%;
+}
+
+.video-frame {
+    background-color: var(--color-primary-dark);
+    padding: 20px;
+    border-radius: 10px 80px 10px 10px; 
+}
+
+.video-frame iframe {
+    display: block;
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 5px;
+}
+
+.video-cta {
+    margin-top: 20px;
+}
+
+.video-cta h3 {
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.contact-form-section {
+    padding: 60px 0;
+    background-color: var(--color-secondary); 
+}
+
+.form-content {
+    background-color: transparent; 
+}
+
+.contact-form label {
+    display: block;
+    color: white;
+    font-weight: 700;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.captcha-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.submit-button {
+    background-color: var(--color-primary-dark);
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+.submit-button:hover {
+    background-color: var(--color-primary-light);
+}
+
+.downloads-section {
+    padding: 60px 0;
+    background-color: var(--color-background-light);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.tab-menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.tab-item {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    padding: 10px 15px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.tab-item.active,
+.tab-item:hover {
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+.cards-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.download-card {
+    display: block; 
+    text-decoration: none; 
+    color: var(--color-text-dark); 
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 300px;
+    transition: transform 0.3s;
+}
+
+.download-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.download-card i {
+    color: var(--color-primary-light);
+    margin-bottom: 15px;
+}
+
+.download-card h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8em;
+    color: #666;
+    background-color: white;
+    border-top: 1px solid var(--color-background-light);
+}
+
+
+/* --- DISEÑO RESPONSIVO (MÓVIL) --- */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column;
+        /* IMPORTANTE: Quitamos text-align: center para mantener el "look" de PC */
+        text-align: left; 
+        align-items: flex-start; /* Alinea los elementos (textos, botón) a la izquierda */
+        
+        min-height: auto; 
+        padding-bottom: 60px;
+        padding-top: 40px; /* Un poco de espacio arriba */
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 40px;
+        /* Aseguramos que el contenido interno también se alinee a la izquierda */
+        text-align: left; 
+    }
+    
+    .hero-decoration {
+        max-width: 100%;
+        width: 100%;
+        /* Opcional: Centrar la imagen si se desea, pero el texto queda a la izquierda */
+        justify-content: center; 
+    }
+    
+    .invitation-grid {
+        flex-direction: column;
+    }
+    .invitation-text-block, .video-block {
+        max-width: 100%;
+    }
+    .cards-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .social-links {
+        position: static;
+        text-align: center;
+    }
+    
+    /* --- TÍTULO GIGANTE EN MÓVIL --- */
+    .hero-title {
+        /* Usamos VW para que sea gigante y llene el ancho */
+        font-size: 16vw; 
+        
+        margin-bottom: 50px; /* Mucho espacio para el botón */
+        padding-left: 0; /* Quitamos padding extra si es necesario para que pegue al borde */
+        
+        /* Ajuste fino para móvil */
+        line-height: 0.9;
+    }
+    
+    /* Aseguramos que el botón no se estire raro */
+    .cta-button {
+        display: inline-block;
+        width: auto; /* Que no ocupe todo el ancho, solo lo necesario */
+    }
+    
+    .social-card-1 {
+        width: 100%;
+        height: 250px;
+        box-shadow: none; 
+        border-radius: 0;
+    }
+    .social-card-2 {
+        width: 100%;
+        height: 180px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); 
+        margin-top: 20px;
+        transform: none;
+    }
+}
+
+
+.content-tablon-section {
+    padding: 60px 0;
+    min-height: 80vh;
+    background-color: var(--color-background-light); 
+}
+
+.page-main-title {
+    font-size: 3em;
+    font-weight: 900;
+    color: var(--color-primary-dark);
+    margin-bottom: 5px;
+}
+
+.page-subtitle {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--color-secondary); 
+    padding-bottom: 15px;
+}
+
+
+.tablon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px;
+}
+
+
+.post-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    line-height: 1.5;
+    position: relative;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.post-card h2, .post-card h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.post-meta {
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
+.post-category {
+    font-weight: 700;
+    color: var(--color-secondary);
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+
+.main-document {
+    grid-column: 1 / -1; 
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background-color: var(--color-primary-dark); 
+    color: white;
+}
+
+.main-document h2, .main-document p {
+    color: white; 
+}
+
+.main-document .post-icon i {
+    color: var(--color-secondary); 
+}
+
+.main-document .cta-button {
+    flex-shrink: 0; 
+}
+
+
+.read-more-link {
+    color: var(--color-secondary);
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .tablon-grid {
+        grid-template-columns: 1fr; 
+    }
+    .main-document {
+        flex-direction: column;
+        text-align: center;
+    }
+}
