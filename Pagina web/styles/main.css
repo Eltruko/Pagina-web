@@ -607,3 +607,184 @@ footer {
         text-align: center;
     }
 }
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
+.logo-link:hover .logo {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.logo {
+    transition: transform 0.3s ease;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+/* ===== MENÚ HAMBURGUESA ===== */
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 1rem 2rem;
+}
+
+/* Ocultar checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Estilos de las 3 barras - MORADAS para fondo blanco */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    order: 2;
+    border: 2px solid #90268E; /* Borde morado */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+    background: rgba(144, 38, 142, 0.1); /* Fondo morado suave en hover */
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #90268E; /* Morado oficial */
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Animación de las barras cuando está abierto */
+.menu-toggle:checked ~ .hamburger {
+    background: rgba(144, 38, 142, 0.1);
+    border-color: #00C7B1; /* Borde teal cuando está abierto */
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background: #00C7B1; /* Teal cuando está abierto */
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background: #00C7B1; /* Teal cuando está abierto */
+}
+
+/* Menú desplegable con morado oficial */
+.main-nav {
+    position: absolute;
+    top: calc(100% - 10px);
+    left: 15rem;
+    background: #90268E;
+    min-width: 280px;
+    border-radius: 0 0 20px 20px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(144, 38, 142, 0.3);
+    z-index: 999;
+    border: 2px solid rgba(0, 199, 177, 0.3);
+}
+
+/* Mostrar menú cuando checkbox está marcado */
+.menu-toggle:checked ~ .main-nav {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estilos de los enlaces del menú */
+.nav-item {
+    text-decoration: none;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    border-left: 3px solid transparent;
+}
+
+.nav-item:hover {
+    background: rgba(0, 199, 177, 0.2);
+    transform: translateX(5px);
+    border-left: 3px solid #00C7B1;
+}
+
+.nav-item.active {
+    background: rgba(0, 199, 177, 0.3);
+    font-weight: 600;
+    border-left: 3px solid #00C7B1;
+}
+
+.nav-item i {
+    width: 20px;
+    text-align: center;
+    color: #00C7B1;
+}
+
+/* Logo como enlace */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+    order: 1;
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .main-nav {
+        left: 1rem;
+        min-width: 200px;
+    }
+    
+    .hamburger span {
+        width: 25px;
+        height: 2.5px;
+    }
+}
